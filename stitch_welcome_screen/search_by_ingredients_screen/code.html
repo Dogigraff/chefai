@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search by Ingredients - ChefOS</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c753",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#121212", /* Updated to match user request */
+                        "surface-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-input {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Custom gradient for bottom fade */
+        .bottom-fade {
+            background: linear-gradient(to top, #121212 40%, rgba(18, 18, 18, 0.8) 80%, transparent 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#121212] font-display text-white antialiased min-h-screen relative flex flex-col pb-32 overflow-x-hidden selection:bg-primary selection:text-black">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/5 px-4 pt-4 pb-3 flex items-center justify-between">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-white">arrow_back</span>
+</button>
+<span class="text-sm font-semibold tracking-wide text-white/80 uppercase">Pantry Check</span>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-white">history</span>
+</button>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 px-4 pt-6 space-y-8">
+<!-- Headline -->
+<div class="space-y-2">
+<h1 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
+                What's in your <br/>
+<span class="text-primary drop-shadow-[0_0_15px_rgba(0,199,83,0.25)]">fridge today?</span>
+</h1>
+<p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-[80%]">
+                Add up to 5 ingredients to discover recipes you can cook right now.
+            </p>
+</div>
+<!-- Search Bar -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="w-full glass-input rounded-full py-4 pl-14 pr-14 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all shadow-lg" placeholder="Type an ingredient (e.g. Chicken)..." type="text"/>
+<button class="absolute inset-y-0 right-2 pr-2 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary">mic</span>
+</div>
+</button>
+</div>
+<!-- Selected Ingredients (Pantry) -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-white font-bold text-lg">Your Pantry</h3>
+<button class="text-xs font-medium text-primary hover:text-primary/80 transition-colors uppercase tracking-wider">Clear all</button>
+</div>
+<div class="flex flex-wrap gap-3">
+<!-- Selected Item 1 -->
+<div class="group flex items-center gap-2 pl-4 pr-2 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary cursor-pointer hover:bg-primary/30 transition-all">
+<span class="text-sm font-bold">Chicken Breast</span>
+<button class="flex items-center justify-center w-6 h-6 rounded-full bg-primary/20 hover:bg-primary text-primary hover:text-black transition-colors">
+<span class="material-symbols-outlined text-[16px] font-bold">close</span>
+</button>
+</div>
+<!-- Selected Item 2 -->
+<div class="group flex items-center gap-2 pl-4 pr-2 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary cursor-pointer hover:bg-primary/30 transition-all">
+<span class="text-sm font-bold">Garlic</span>
+<button class="flex items-center justify-center w-6 h-6 rounded-full bg-primary/20 hover:bg-primary text-primary hover:text-black transition-colors">
+<span class="material-symbols-outlined text-[16px] font-bold">close</span>
+</button>
+</div>
+<!-- Selected Item 3 -->
+<div class="group flex items-center gap-2 pl-4 pr-2 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary cursor-pointer hover:bg-primary/30 transition-all">
+<span class="text-sm font-bold">Spinach</span>
+<button class="flex items-center justify-center w-6 h-6 rounded-full bg-primary/20 hover:bg-primary text-primary hover:text-black transition-colors">
+<span class="material-symbols-outlined text-[16px] font-bold">close</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Quick Add Categories -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-white font-bold text-lg">Quick Add</h3>
+</div>
+<!-- Category Tabs -->
+<div class="flex gap-6 overflow-x-auto no-scrollbar pb-1 mask-linear-fade">
+<button class="shrink-0 text-white font-bold text-base border-b-2 border-primary pb-2">Essentials</button>
+<button class="shrink-0 text-gray-500 hover:text-gray-300 font-medium text-base border-b-2 border-transparent pb-2 transition-colors">Vegetables</button>
+<button class="shrink-0 text-gray-500 hover:text-gray-300 font-medium text-base border-b-2 border-transparent pb-2 transition-colors">Dairy &amp; Eggs</button>
+<button class="shrink-0 text-gray-500 hover:text-gray-300 font-medium text-base border-b-2 border-transparent pb-2 transition-colors">Spices</button>
+</div>
+<!-- Suggestions Grid -->
+<div class="grid grid-cols-2 min-[400px]:grid-cols-3 gap-3">
+<!-- Suggestion Item -->
+<button class="flex items-center justify-center gap-2 h-12 rounded-2xl glass-panel text-gray-300 hover:bg-white/10 hover:text-white hover:border-white/20 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-[20px] text-primary/80">add</span>
+<span class="text-sm font-medium">Onions</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 rounded-2xl glass-panel text-gray-300 hover:bg-white/10 hover:text-white hover:border-white/20 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-[20px] text-primary/80">add</span>
+<span class="text-sm font-medium">Tomatoes</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 rounded-2xl glass-panel text-gray-300 hover:bg-white/10 hover:text-white hover:border-white/20 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-[20px] text-primary/80">add</span>
+<span class="text-sm font-medium">Pasta</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 rounded-2xl glass-panel text-gray-300 hover:bg-white/10 hover:text-white hover:border-white/20 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-[20px] text-primary/80">add</span>
+<span class="text-sm font-medium">Rice</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 rounded-2xl glass-panel text-gray-300 hover:bg-white/10 hover:text-white hover:border-white/20 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-[20px] text-primary/80">add</span>
+<span class="text-sm font-medium">Eggs</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 rounded-2xl glass-panel text-gray-300 hover:bg-white/10 hover:text-white hover:border-white/20 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-[20px] text-primary/80">add</span>
+<span class="text-sm font-medium">Milk</span>
+</button>
+</div>
+</section>
+<!-- Preview Teaser -->
+<section class="pt-2">
+<h3 class="text-white/60 font-semibold text-xs uppercase tracking-widest mb-3">Potential Match Found</h3>
+<div class="relative overflow-hidden rounded-3xl glass-panel p-3 flex gap-4 items-center group">
+<div class="relative w-20 h-20 rounded-2xl overflow-hidden shrink-0">
+<img alt="Top down view of a cooked chicken dish with green herbs" class="w-full h-full object-cover" data-alt="Top down view of a cooked chicken dish with green herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtWUToL3nsYopmgegR2qvqNbFt1f_PztuXg_L7DtptScaMxHX0kMu6kxrv4rWmypmawUlLmcqnLZl6iZTxw0Sdq8-eDBQHWZOWNEkAXTsWIBn3eaTJMwl7_vhgrgxNAdI7GxnsW8YgRgqM3OAZ9ld_MAo6c_ABlqoxjeJRHKseG5lZYfSvcGBTKYZ0Tiu4MsM_srBrBlSYDi1Jz0ex4f0cRgUhlygX68tYvHkKS9ohrqWZDX91KP4ytNEimW8zXGqL2FXpUFB0MdQ"/>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-primary text-black text-[10px] font-bold px-2 py-0.5 rounded-full">PERFECT MATCH</span>
+</div>
+<h4 class="text-white font-bold text-lg truncate">Garlic Spinach Chicken</h4>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-gray-400 text-[14px]">schedule</span>
+<span class="text-xs text-gray-400">25 min</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-gray-400 text-[14px]">local_fire_department</span>
+<span class="text-xs text-gray-400">320 cal</span>
+</div>
+</div>
+</div>
+<div class="pr-2">
+<span class="material-symbols-outlined text-white/50 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Floating) -->
+<div class="fixed bottom-0 left-0 w-full z-40">
+<!-- Gradient fade for smooth integration -->
+<div class="bottom-fade h-24 w-full absolute bottom-0 pointer-events-none"></div>
+<!-- Action Button Container -->
+<div class="relative px-6 pb-8 pt-4 flex justify-center">
+<button class="w-full max-w-md bg-primary hover:bg-[#00e660] text-[#051d10] font-bold text-lg h-14 rounded-full shadow-[0_4px_25px_rgba(0,199,83,0.35)] flex items-center justify-center gap-3 transition-all transform active:scale-[0.98]">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span>Find Recipes</span>
+<span class="bg-black/10 px-2 py-0.5 rounded-lg text-sm font-extrabold min-w-[24px]">3</span>
+</button>
+</div>
+</div>
+</body></html>

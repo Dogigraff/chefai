@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChefOS Profile</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c753",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0f2317", // Deep forest dark
+                        "surface-dark": "#1A2E22", // Slightly lighter for cards
+                        "surface-glass": "rgba(255, 255, 255, 0.05)",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white overflow-x-hidden selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col pb-20">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 flex items-center justify-between p-4 backdrop-blur-md bg-background-light/80 dark:bg-background-dark/80 supports-[backdrop-filter]:bg-background-dark/60">
+<button class="flex size-10 items-center justify-center rounded-full text-slate-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight">My Profile</h2>
+<button class="flex h-10 items-center justify-center rounded-full px-4 text-primary font-bold text-sm hover:bg-primary/10 transition-colors">
+                Edit
+            </button>
+</div>
+<!-- Profile Header -->
+<div class="flex flex-col items-center px-4 pt-2 pb-6">
+<div class="relative mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 border-4 border-surface-dark shadow-2xl" data-alt="Portrait of a professional chef smiling confidently" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDG2cGRtIbCpfP8Hk2ptqDcfdeAavdCvweWadzAczrULrKmy5lmfZV9gw4-uRNcaQtj74v5IENzYpG4Z1XqnAwdn7NGD37llUUbhcTk2TLDQd-Kh1OqDv_TNepg4mfdA2yWOsoaI3Ll-Cw_8_Dw8RnncGDz7yNb2LusizyDsq5LgPmpMuZM-DtLSOgGaHAvrIyvFxzK8uF7KIaTB9GsoOmpTs3VtVjnNj4q-AuScyNWH_lVt2tt7atlv5_eSh7eINuo2Kmu3GOcSBA");'>
+</div>
+<button class="absolute bottom-0 right-0 flex size-10 items-center justify-center rounded-full bg-primary text-white border-4 border-background-dark shadow-lg hover:bg-green-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center gap-1">
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Gordon Ramsay</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">@chef_gordon • gordon@chefos.com</p>
+</div>
+</div>
+<!-- Stats Bar -->
+<div class="px-4 pb-8">
+<div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<div class="flex flex-1 min-w-[100px] flex-col items-center justify-center gap-1 rounded-2xl bg-white dark:bg-surface-glass border border-slate-200 dark:border-white/5 p-4 backdrop-blur-sm shadow-sm">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[20px]">skillet</span>
+</div>
+<p class="text-xl font-bold tracking-tight">124</p>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Recipes</p>
+</div>
+<div class="flex flex-1 min-w-[100px] flex-col items-center justify-center gap-1 rounded-2xl bg-white dark:bg-surface-glass border border-slate-200 dark:border-white/5 p-4 backdrop-blur-sm shadow-sm">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<p class="text-xl font-bold tracking-tight">45</p>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Saved</p>
+</div>
+<div class="flex flex-1 min-w-[100px] flex-col items-center justify-center gap-1 rounded-2xl bg-white dark:bg-surface-glass border border-slate-200 dark:border-white/5 p-4 backdrop-blur-sm shadow-sm">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</div>
+<p class="text-xl font-bold tracking-tight">Master</p>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Level</p>
+</div>
+</div>
+</div>
+<!-- Dietary DNA Section -->
+<div class="px-4 pb-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold tracking-tight">Dietary DNA</h3>
+<span class="text-xs font-bold text-primary cursor-pointer hover:underline">Manage</span>
+</div>
+<div class="flex flex-wrap gap-3">
+<!-- Active Chip -->
+<button class="group flex h-9 items-center gap-2 rounded-xl bg-primary px-4 shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined text-white text-[18px]">eco</span>
+<span class="text-white text-sm font-bold">Vegan</span>
+</button>
+<!-- Active Chip -->
+<button class="group flex h-9 items-center gap-2 rounded-xl bg-primary px-4 shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined text-white text-[18px]">no_meals</span>
+<span class="text-white text-sm font-bold">Gluten-Free</span>
+</button>
+<!-- Inactive Chip -->
+<button class="group flex h-9 items-center gap-2 rounded-xl bg-white dark:bg-surface-glass border border-slate-200 dark:border-white/10 px-4 transition-all hover:bg-slate-100 dark:hover:bg-white/10 active:scale-95">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Keto</span>
+</button>
+<!-- Inactive Chip -->
+<button class="group flex h-9 items-center gap-2 rounded-xl bg-white dark:bg-surface-glass border border-slate-200 dark:border-white/10 px-4 transition-all hover:bg-slate-100 dark:hover:bg-white/10 active:scale-95">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Nut-Free</span>
+</button>
+<!-- Inactive Chip -->
+<button class="group flex h-9 items-center gap-2 rounded-xl bg-white dark:bg-surface-glass border border-slate-200 dark:border-white/10 px-4 transition-all hover:bg-slate-100 dark:hover:bg-white/10 active:scale-95">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Spicy</span>
+</button>
+</div>
+</div>
+<!-- Settings & Actions List -->
+<div class="px-4 pb-8 flex-1">
+<h3 class="text-lg font-bold tracking-tight mb-4">Settings</h3>
+<div class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-white/5 bg-white dark:bg-surface-glass shadow-sm backdrop-blur-md">
+<!-- Menu Item -->
+<button class="flex items-center justify-between p-4 transition-colors hover:bg-slate-50 dark:hover:bg-white/5 group border-b border-slate-100 dark:border-white/5">
+<div class="flex items-center gap-4">
+<div class="flex size-10 items-center justify-center rounded-full bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-base font-bold text-slate-900 dark:text-white">Account</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Personal info, password</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</button>
+<!-- Menu Item -->
+<button class="flex items-center justify-between p-4 transition-colors hover:bg-slate-50 dark:hover:bg-white/5 group border-b border-slate-100 dark:border-white/5">
+<div class="flex items-center gap-4">
+<div class="flex size-10 items-center justify-center rounded-full bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-base font-bold text-slate-900 dark:text-white">Notifications</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Recipe alerts, reminders</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</button>
+<!-- Menu Item -->
+<button class="flex items-center justify-between p-4 transition-colors hover:bg-slate-50 dark:hover:bg-white/5 group">
+<div class="flex items-center gap-4">
+<div class="flex size-10 items-center justify-center rounded-full bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-primary">
+<span class="material-symbols-outlined">help</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-base font-bold text-slate-900 dark:text-white">Help &amp; Support</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">FAQ, contact us</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Danger Zone -->
+<div class="px-4 pb-8 mt-auto">
+<button class="w-full flex items-center justify-center gap-2 rounded-xl border border-red-500/20 bg-red-500/5 p-4 text-red-500 transition-colors hover:bg-red-500/10 active:scale-[0.98]">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-base font-bold">Log Out</span>
+</button>
+<p class="mt-4 text-center text-xs text-slate-400 dark:text-slate-600">ChefOS v2.4.0 (Build 302)</p>
+</div>
+</div>
+</body></html>

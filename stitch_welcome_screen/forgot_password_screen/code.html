@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forgot Password - ChefOS</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c753",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0f2317", // Matches the deep dark green/black theme
+                        "surface-dark": "#182e22", // Slightly lighter for inputs
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl">
+<!-- Header / Navigation -->
+<div class="flex items-center p-4 pt-6 justify-between z-10">
+<button class="text-white hover:text-primary transition-colors flex size-12 shrink-0 items-center justify-center rounded-full active:bg-white/10">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 flex flex-col px-6 pb-6">
+<!-- Hero Illustration -->
+<div class="w-full flex justify-center py-8">
+<div class="relative w-48 h-48 rounded-full bg-gradient-to-b from-primary/20 to-transparent flex items-center justify-center p-8">
+<!-- Illustration Placeholder: Using a styled background image representing security/cooking -->
+<div class="w-full h-full bg-contain bg-center bg-no-repeat drop-shadow-2xl" data-alt="Illustration of a locked cookbook or secure chef interface in neon green style" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSmUpTNsPvMolt7s3Ji0Xkzj3T4tWJq7ANrWJWln9wwmjhrkS-84lDqtvVEJAbF0Tdv2HvxK25qTng9WkW7Ed0AHAuOpzoUn_pQuRbx2gtg48XuldodEE7aoqsOIvZn4bJsjkz4D8QgbPfrAP3d3R9tLxQiLKbMN1_nNahObxgFA2SF3Upy1oC_DsZurp5iye5CNRBss2Ip4Sv_ZTeTy9sBq-dvsxi5ny0KKusulg3AOs_omhnBaO11MgdThve7aoTlnj6f0T10x0"); clip-path: circle(50% at 50% 50%); opacity: 0.9;'>
+</div>
+<!-- Overlay Icon -->
+<div class="absolute -bottom-2 -right-2 bg-background-dark border-4 border-background-dark rounded-full p-3">
+<span class="material-symbols-outlined text-primary text-3xl">lock_reset</span>
+</div>
+</div>
+</div>
+<!-- Headline Text -->
+<div class="flex flex-col gap-2 mb-8">
+<h1 class="text-white tracking-tight text-3xl font-bold leading-tight text-center">Forgot Password?</h1>
+<p class="text-gray-400 text-base font-medium leading-relaxed text-center px-4">
+                    Don't worry, it happens to the best chefs. Enter the email associated with your account and we'll send you a reset link.
+                </p>
+</div>
+<!-- Input Form -->
+<div class="flex flex-col gap-6 w-full">
+<!-- Email Field -->
+<div class="group">
+<label class="block text-sm font-semibold text-primary/80 mb-2 ml-1">Email Address</label>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-gray-400 material-symbols-outlined">mail</span>
+<input class="form-input flex w-full rounded-xl text-white placeholder:text-gray-500 bg-surface-dark border-2 border-transparent focus:border-primary focus:ring-0 focus:outline-none h-14 pl-12 pr-4 text-base font-medium transition-all duration-200" placeholder="chef@example.com" type="email" value=""/>
+</div>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full bg-primary hover:bg-[#00b048] active:scale-[0.98] transition-all text-background-dark font-bold text-lg h-14 rounded-xl shadow-[0_0_20px_rgba(0,199,83,0.3)] flex items-center justify-center gap-2 mt-2">
+<span>Send Instructions</span>
+<span class="material-symbols-outlined text-xl font-bold">send</span>
+</button>
+</div>
+<!-- Footer / Back to Login -->
+<div class="mt-auto pt-8 pb-4 text-center">
+<p class="text-gray-400 text-sm font-medium">
+                    Remember your password? 
+                    <a class="text-primary hover:text-white transition-colors font-bold ml-1" href="#">Log In</a>
+</p>
+</div>
+</div>
+<!-- Bottom spacing for iOS safe area -->
+<div class="h-6 w-full"></div>
+</div>
+</body></html>

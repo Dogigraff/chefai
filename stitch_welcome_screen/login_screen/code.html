@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChefOS Login</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c753",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#121212","glass": "rgba(255, 255, 255, 0.08)",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+<style>.glass-input {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-input:focus-within {
+            border-color: #00c753;
+            box-shadow: 0 0 0 1px rgba(0, 199, 83, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }.bg-overlay {
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 0.9) 60%, rgba(18, 18, 18, 1) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative min-h-screen w-full overflow-hidden flex flex-col justify-center">
+<div class="absolute inset-0 z-0 w-full h-full">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract dark close-up of fresh herbs and ingredients on a dark stone table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKjxk_YLQcjYP3fOnop4FAKQbUOAksFUVUwPOkmjcFEgbs7oA-hWPqvLjgxfHhfgOv9TrojUCXk-06sS31-wbfoOro-hPQrTOag2ZP_hV4OWpqQlV66Z23ZToxHX3NPxQEJOTpmIX-xr4QXA3X_TMjOdRj20N61Q0ZgrhQWXzrhdIX9fQLGbCfkhmC2KuwJkqmVsj5dmp8LfCbVe09zMY6IQw3POlJucy0rtR0nGUtrzcL3WVUqYpUKEwrEB7TW8RHTTLVIcfezSM');">
+</div>
+<div class="absolute inset-0 bg-overlay backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 w-full max-w-[480px] mx-auto px-6 py-8 flex flex-col h-full">
+<div class="flex flex-col items-center justify-center mb-10 pt-8">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md shadow-xl mb-6">
+<span class="material-symbols-outlined text-primary text-[32px]">skillet</span>
+</div>
+<h1 class="text-[32px] font-extrabold tracking-tight leading-tight text-center mb-2">
+                    Welcome back, <span class="text-primary">Chef</span>
+</h1>
+<p class="text-white/60 text-base font-normal text-center">
+                    Log in to your digital kitchen.
+                </p>
+</div>
+<form class="w-full flex flex-col gap-5" onsubmit="event.preventDefault();">
+<div class="group">
+<label class="sr-only" for="email">Email or Username</label>
+<div class="glass-input flex items-center w-full rounded-2xl h-16 px-4 transition-all duration-300">
+<span class="material-symbols-outlined text-white/40 mr-3 group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full bg-transparent border-none text-white placeholder:text-white/30 focus:ring-0 p-0 text-base font-medium h-full" id="email" placeholder="Email or Username" type="text"/>
+</div>
+</div>
+<div class="group">
+<label class="sr-only" for="password">Password</label>
+<div class="glass-input flex items-center w-full rounded-2xl h-16 px-4 transition-all duration-300">
+<span class="material-symbols-outlined text-white/40 mr-3 group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full bg-transparent border-none text-white placeholder:text-white/30 focus:ring-0 p-0 text-base font-medium h-full" id="password" placeholder="Password" type="password"/>
+<button class="text-white/40 hover:text-white transition-colors p-2 flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex justify-end w-full -mt-2">
+<a class="text-sm font-medium text-white/50 hover:text-primary transition-colors" href="#">
+                        Forgot Password?
+                    </a>
+</div>
+<button class="w-full bg-primary hover:bg-[#00b048] active:scale-[0.98] text-white font-bold text-lg h-16 rounded-full shadow-[0_8px_30px_rgb(0,199,83,0.3)] transition-all duration-300 mt-4 flex items-center justify-center gap-2" type="submit">
+                    Log In
+                </button>
+</form>
+<div class="relative flex py-8 items-center">
+<div class="flex-grow border-t border-white/10"></div>
+<span class="flex-shrink-0 mx-4 text-white/30 text-sm">or continue with</span>
+<div class="flex-grow border-t border-white/10"></div>
+</div>
+<div class="flex flex-row justify-center gap-4">
+<button class="group flex items-center justify-center w-14 h-14 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,199,83,0.1)] transition-all duration-300 backdrop-blur-sm">
+<img alt="Google" class="w-6 h-6 opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Google Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0XQNSyxBRYE39oV77ylxwKGxxtkYLzUXs2KvKbs1kopOtqnvViuaxxkO_V4s1atlK_UOBxKUab067QgUPH5BbJR0wZdrTClYzP0GUluIlzkLCrUABiDwh76TewKUlDAtsm6ZiCbyUbZ97M-DN1V9HYqynkgCM_Gc1D6fkwXWJjjPgQrzv1LSfmCubwFapZbjD9D_ShSe3l6uMXIxk9J9_OeqG_L9l7v6J3YnYChov2Eh-n0pvexYnTcjhyOA0Pi5LLN8tfS_L6QA"/>
+</button>
+<button class="group flex items-center justify-center w-14 h-14 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,199,83,0.1)] transition-all duration-300 backdrop-blur-sm">
+<img alt="Apple" class="w-6 h-6 invert opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Github Logo as placeholder for Apple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHeLreyFjOVb4pA0L08vFybPb-4_n7M9Ig8axJN9H-TruMzcWVOsGsjgBk-j2sFnGMypbb6xgA0t-OLMD4Sf9hVzbYCditeIhWeeNJiAgs8LUkOQ8kY9UoRBJUzZ1YwHpWZbN_kG4MgsQwfGp0ryfam1URnUA72bC0A4yKm5EWxjq3P8vr7w8RCfhtsSNxB4BPaBzRpjR7TqL6ioTda3BZfEWsnjMFSs0UBQhTsOQBCI6gCAyblZtI06Y16FMfaVNt77fdGrsKOaM"/>
+</button>
+<button class="group flex items-center justify-center w-14 h-14 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,199,83,0.1)] transition-all duration-300 backdrop-blur-sm">
+<svg class="w-6 h-6 text-white opacity-80 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+</button>
+<button class="group flex items-center justify-center w-14 h-14 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,199,83,0.1)] transition-all duration-300 backdrop-blur-sm">
+<svg class="w-6 h-6 text-white opacity-80 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zM17.6 8.35c-4.14 1.73-6.9 2.92-8.28 3.49-3.93 1.64-4.75 1.96-4.66 2.58.15 1.1 2.37 1.8 2.37 1.8l6.23-4.18c.3-.2.57.12.33.34l-5.18 4.68-.2 3.03c.3 0 .43-.14.6-.29l1.45-1.4 3.01 2.22c.55.3.95.15 1.09-.5l1.97-9.3c.2-.8-.3-1.16-.83-.97z"></path>
+</svg>
+</button>
+</div>
+<div class="mt-auto pt-8 pb-4 text-center">
+<p class="text-white/50 text-sm">
+                    Don't have an account? 
+                    <a class="text-primary font-bold hover:underline ml-1" href="#">Sign Up</a>
+</p>
+</div>
+</div>
+</div>
+</body></html>

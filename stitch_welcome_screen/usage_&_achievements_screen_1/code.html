@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChefOS - Usage &amp; Achievements</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00c774",
+              "background-light": "#f5f8f7",
+              "background-dark": "#0f231b",
+              "card-dark": "#1a2e26", // Slightly lighter than background-dark for cards
+              "card-light": "#ffffff",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            boxShadow: {
+                'glow': '0 0 15px -3px rgba(0, 199, 116, 0.3)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar hide for cleaner UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden transition-colors duration-300">
+<!-- Top App Bar -->
+<div class="flex items-center px-4 py-4 pb-2 justify-between sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="text-gray-900 dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Chef's Log</h2>
+</div>
+<!-- Profile Header -->
+<div class="flex p-4 @container">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex gap-4 items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-20 w-20 border-2 border-primary" data-alt="Profile picture of a chef in professional attire" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTUEq-cphzQWTAShUFu8_3o9DxgvSeDFarefgM1wyfwRBS4Np4X11xxR4huGo0Pp5qyZVc7LAgKOfL2Ln9pqzDh0CCANAdGP2Z5aOlCIJYB9TJVBJU_h3MMh5mEoUxQh2Kkzu_j9F8fpcrXe2TXovTB3Kn8c_NAk22FYABUmmlGuC8EOhrgBRWyx6mANf8_ubIE6EmOJmm7uXK6avDbeGORsRJoluEtOhaEITZMIPoL8iyFoChNsAEPNsjC0dzszQ6GOOyUNZw0b8");'>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-black text-xs font-bold px-2 py-0.5 rounded-full border-2 border-background-dark">
+                        Lv. 12
+                    </div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Chef Alex</p>
+<p class="text-primary text-sm font-bold uppercase tracking-wider mb-0.5">Sous Chef</p>
+<p class="text-gray-500 dark:text-[#9abcae] text-xs font-normal leading-normal">Member since 2023</p>
+</div>
+</div>
+<!-- Edit/Settings Icon could go here -->
+</div>
+</div>
+<!-- Main Stats (The Pass) -->
+<div class="flex flex-wrap gap-4 px-4 pb-2">
+<!-- Streak Card -->
+<div class="flex min-w-[158px] flex-1 flex-col gap-3 rounded-2xl p-5 bg-card-light dark:bg-card-dark shadow-sm border border-gray-100 dark:border-white/5 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">local_fire_department</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-orange-500/20 text-orange-500">
+<span class="material-symbols-outlined text-[20px] fill-1">local_fire_department</span>
+</div>
+<p class="text-gray-500 dark:text-[#9abcae] text-sm font-medium leading-normal">Current Streak</p>
+</div>
+<p class="text-gray-900 dark:text-white tracking-tight text-3xl font-extrabold leading-tight">12 Days</p>
+<div class="w-full bg-gray-200 dark:bg-white/10 rounded-full h-1.5 mt-1">
+<div class="bg-orange-500 h-1.5 rounded-full" style="width: 85%"></div>
+</div>
+<p class="text-xs text-gray-400 dark:text-gray-500 mt-[-4px]">Personal Best: 14 Days</p>
+</div>
+<!-- Recipes Card -->
+<div class="flex min-w-[158px] flex-1 flex-col gap-3 rounded-2xl p-5 bg-card-light dark:bg-card-dark shadow-sm border border-gray-100 dark:border-white/5 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">restaurant_menu</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<p class="text-gray-500 dark:text-[#9abcae] text-sm font-medium leading-normal">Total Recipes</p>
+</div>
+<p class="text-gray-900 dark:text-white tracking-tight text-3xl font-extrabold leading-tight">45</p>
+<div class="flex items-center gap-1 mt-auto">
+<span class="material-symbols-outlined text-primary text-xs">trending_up</span>
+<p class="text-xs text-primary font-medium">+3 this week</p>
+</div>
+</div>
+</div>
+<!-- Weekly Activity Graph -->
+<div class="px-4 py-4">
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 border border-gray-100 dark:border-white/5">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h3 class="text-gray-900 dark:text-white text-lg font-bold">Kitchen Activity</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400">Recipes cooked over last 7 days</p>
+</div>
+<span class="text-primary font-bold text-2xl">12h 30m</span>
+</div>
+<div class="flex items-end justify-between gap-2 h-32 w-full">
+<!-- Bar 1 -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-gray-100 dark:bg-white/5 rounded-t-lg relative h-full flex items-end overflow-hidden group-hover:bg-white/10 transition-colors">
+<div class="w-full bg-primary/30 group-hover:bg-primary transition-all duration-300 rounded-t-lg" style="height: 30%;"></div>
+</div>
+<span class="text-xs font-medium text-gray-400 group-hover:text-white">M</span>
+</div>
+<!-- Bar 2 -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-gray-100 dark:bg-white/5 rounded-t-lg relative h-full flex items-end overflow-hidden group-hover:bg-white/10 transition-colors">
+<div class="w-full bg-primary/30 group-hover:bg-primary transition-all duration-300 rounded-t-lg" style="height: 45%;"></div>
+</div>
+<span class="text-xs font-medium text-gray-400 group-hover:text-white">T</span>
+</div>
+<!-- Bar 3 -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-gray-100 dark:bg-white/5 rounded-t-lg relative h-full flex items-end overflow-hidden group-hover:bg-white/10 transition-colors">
+<div class="w-full bg-primary/30 group-hover:bg-primary transition-all duration-300 rounded-t-lg" style="height: 20%;"></div>
+</div>
+<span class="text-xs font-medium text-gray-400 group-hover:text-white">W</span>
+</div>
+<!-- Bar 4 (High) -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-gray-100 dark:bg-white/5 rounded-t-lg relative h-full flex items-end overflow-hidden group-hover:bg-white/10 transition-colors">
+<div class="w-full bg-primary shadow-[0_0_10px_rgba(0,199,116,0.5)] rounded-t-lg" style="height: 85%;"></div>
+</div>
+<span class="text-xs font-bold text-primary">T</span>
+</div>
+<!-- Bar 5 -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-gray-100 dark:bg-white/5 rounded-t-lg relative h-full flex items-end overflow-hidden group-hover:bg-white/10 transition-colors">
+<div class="w-full bg-primary/30 group-hover:bg-primary transition-all duration-300 rounded-t-lg" style="height: 55%;"></div>
+</div>
+<span class="text-xs font-medium text-gray-400 group-hover:text-white">F</span>
+</div>
+<!-- Bar 6 -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-gray-100 dark:bg-white/5 rounded-t-lg relative h-full flex items-end overflow-hidden group-hover:bg-white/10 transition-colors">
+<div class="w-full bg-primary/30 group-hover:bg-primary transition-all duration-300 rounded-t-lg" style="height: 90%;"></div>
+</div>
+<span class="text-xs font-medium text-gray-400 group-hover:text-white">S</span>
+</div>
+<!-- Bar 7 -->
+<div class="flex flex-col items-center gap-2 flex-1 group">
+<div class="w-full bg-gray-100 dark:bg-white/5 rounded-t-lg relative h-full flex items-end overflow-hidden group-hover:bg-white/10 transition-colors">
+<div class="w-full bg-primary/30 group-hover:bg-primary transition-all duration-300 rounded-t-lg" style="height: 40%;"></div>
+</div>
+<span class="text-xs font-medium text-gray-400 group-hover:text-white">S</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Flavor Profile (Data Viz) -->
+<div class="flex flex-col gap-4 px-4 py-2">
+<h2 class="text-gray-900 dark:text-white tracking-tight text-[22px] font-bold leading-tight">Flavor Profile</h2>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-6 border border-gray-100 dark:border-white/5 flex flex-col gap-5">
+<!-- Flavor Item: Spicy -->
+<div class="flex items-center gap-3">
+<div class="w-16 text-right text-sm font-semibold text-gray-400 dark:text-gray-400">Spicy</div>
+<div class="flex-1 h-3 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-orange-400 to-red-500 rounded-full" style="width: 75%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-900 dark:text-white">75%</div>
+</div>
+<!-- Flavor Item: Savory -->
+<div class="flex items-center gap-3">
+<div class="w-16 text-right text-sm font-semibold text-gray-400 dark:text-gray-400">Savory</div>
+<div class="flex-1 h-3 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary/60 to-primary rounded-full shadow-glow" style="width: 90%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-900 dark:text-white">90%</div>
+</div>
+<!-- Flavor Item: Sweet -->
+<div class="flex items-center gap-3">
+<div class="w-16 text-right text-sm font-semibold text-gray-400 dark:text-gray-400">Sweet</div>
+<div class="flex-1 h-3 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-pink-400 to-purple-500 rounded-full" style="width: 40%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-900 dark:text-white">40%</div>
+</div>
+<!-- Flavor Item: Sour -->
+<div class="flex items-center gap-3">
+<div class="w-16 text-right text-sm font-semibold text-gray-400 dark:text-gray-400">Sour</div>
+<div class="flex-1 h-3 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-full" style="width: 25%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-900 dark:text-white">25%</div>
+</div>
+<!-- Flavor Item: Umami -->
+<div class="flex items-center gap-3">
+<div class="w-16 text-right text-sm font-semibold text-gray-400 dark:text-gray-400">Umami</div>
+<div class="flex-1 h-3 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full" style="width: 60%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-900 dark:text-white">60%</div>
+</div>
+</div>
+</div>
+<!-- The Pantry Stats -->
+<div class="px-4 py-4">
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-5 border border-gray-100 dark:border-white/5 flex justify-between items-center">
+<div class="flex gap-4 items-center">
+<div class="bg-primary/20 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined">kitchen</span>
+</div>
+<div>
+<h3 class="text-gray-900 dark:text-white text-base font-bold">The Pantry</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm">128 unique ingredients used</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">Top Ingredient</p>
+<p class="text-primary font-bold text-lg">🧄 Garlic</p>
+</div>
+</div>
+</div>
+<!-- Trophy Cabinet (Achievements) -->
+<div class="flex flex-col gap-4 px-4 py-2 pb-6">
+<div class="flex justify-between items-end">
+<h2 class="text-gray-900 dark:text-white tracking-tight text-[22px] font-bold leading-tight">Trophy Cabinet</h2>
+<span class="text-sm text-primary font-medium cursor-pointer">View All</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<!-- Unlocked Badge -->
+<div class="aspect-square bg-card-light dark:bg-card-dark rounded-xl flex flex-col items-center justify-center gap-2 p-2 border border-primary/30 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-green-700 flex items-center justify-center text-white shadow-glow">
+<span class="material-symbols-outlined">military_tech</span>
+</div>
+<p class="text-[11px] font-bold text-gray-900 dark:text-white text-center leading-tight z-10">Sous Chef</p>
+<p class="text-[9px] text-primary font-semibold z-10">Unlocked</p>
+</div>
+<!-- Unlocked Badge -->
+<div class="aspect-square bg-card-light dark:bg-card-dark rounded-xl flex flex-col items-center justify-center gap-2 p-2 border border-primary/30 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-green-700 flex items-center justify-center text-white shadow-glow">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<p class="text-[11px] font-bold text-gray-900 dark:text-white text-center leading-tight z-10">Vegan Warrior</p>
+<p class="text-[9px] text-primary font-semibold z-10">Unlocked</p>
+</div>
+<!-- Locked Badge -->
+<div class="aspect-square bg-gray-100 dark:bg-white/5 rounded-xl flex flex-col items-center justify-center gap-2 p-2 border border-transparent opacity-70">
+<div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined">soup_kitchen</span>
+</div>
+<p class="text-[11px] font-medium text-gray-500 dark:text-gray-400 text-center leading-tight">Sauce Boss</p>
+<p class="text-[9px] text-gray-400 uppercase tracking-wide">Locked</p>
+</div>
+<!-- Unlocked Badge -->
+<div class="aspect-square bg-card-light dark:bg-card-dark rounded-xl flex flex-col items-center justify-center gap-2 p-2 border border-primary/30 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-green-700 flex items-center justify-center text-white shadow-glow">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<p class="text-[11px] font-bold text-gray-900 dark:text-white text-center leading-tight z-10">Speed Demon</p>
+<p class="text-[9px] text-primary font-semibold z-10">Unlocked</p>
+</div>
+<!-- Locked Badge -->
+<div class="aspect-square bg-gray-100 dark:bg-white/5 rounded-xl flex flex-col items-center justify-center gap-2 p-2 border border-transparent opacity-70">
+<div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined">cake</span>
+</div>
+<p class="text-[11px] font-medium text-gray-500 dark:text-gray-400 text-center leading-tight">Baker</p>
+<p class="text-[9px] text-gray-400 uppercase tracking-wide">Locked</p>
+</div>
+<!-- Locked Badge -->
+<div class="aspect-square bg-gray-100 dark:bg-white/5 rounded-xl flex flex-col items-center justify-center gap-2 p-2 border border-transparent opacity-70">
+<div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined">ramen_dining</span>
+</div>
+<p class="text-[11px] font-medium text-gray-500 dark:text-gray-400 text-center leading-tight">Noodle King</p>
+<p class="text-[9px] text-gray-400 uppercase tracking-wide">Locked</p>
+</div>
+</div>
+</div>
+<!-- Share Button Area -->
+<div class="flex px-4 py-6 justify-center sticky bottom-0 z-40 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent pt-12 pb-8">
+<button class="flex w-full max-w-[320px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 bg-primary text-background-dark shadow-[0_0_20px_rgba(0,199,116,0.4)] hover:shadow-[0_0_30px_rgba(0,199,116,0.6)] hover:-translate-y-1 transition-all duration-300 gap-2 pl-4 text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined text-[20px]">share</span>
+<span class="truncate">Share My Stats</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChefOS - Cooking Timer</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00C853",
+              "background-light": "#f5f8f7",
+              "background-dark": "#121212",
+              "surface-glass": "rgba(255, 255, 255, 0.05)",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "1.5rem", 
+              "xl": "2rem", 
+              "2xl": "2.5rem",
+              "full": "9999px"
+            },
+            boxShadow: {
+                'glow': '0 0 20px -5px rgba(0, 200, 83, 0.3)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .timer-progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto w-full">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Kitchen Timers</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-full size-10 text-slate-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center pt-24 pb-28 px-6 w-full max-w-md mx-auto">
+<!-- Primary Timer Section -->
+<div class="relative flex flex-col items-center justify-center w-full mb-8">
+<!-- Circular Progress & Time -->
+<div class="relative size-72 flex items-center justify-center">
+<!-- SVG Ring -->
+<svg class="absolute inset-0 size-full" viewbox="0 0 100 100">
+<!-- Background Track -->
+<circle class="text-white/10 stroke-current" cx="50" cy="50" fill="transparent" r="46" stroke-width="3"></circle>
+<!-- Progress Circle -->
+<circle class="text-primary stroke-current timer-progress-ring__circle drop-shadow-[0_0_10px_rgba(0,200,83,0.4)]" cx="50" cy="50" fill="transparent" r="46" stroke-dasharray="289.026" stroke-dashoffset="50" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<!-- Center Content -->
+<div class="flex flex-col items-center z-10">
+<span class="text-white/60 text-sm font-medium tracking-wider uppercase mb-1">Running</span>
+<h1 class="text-6xl font-bold tracking-tighter tabular-nums text-white drop-shadow-lg">03:45</h1>
+<div class="flex items-center gap-2 mt-3 bg-white/10 px-3 py-1 rounded-full border border-white/5">
+<span class="material-symbols-outlined text-primary text-[18px]">local_fire_department</span>
+<span class="text-sm font-semibold">Sealing Steak</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Timer Controls (ButtonGroup) -->
+<div class="flex w-full justify-center gap-4 mb-10">
+<button class="glass-panel flex-1 h-16 rounded-full flex items-center justify-center gap-2 active:scale-95 transition-transform hover:bg-white/10">
+<span class="material-symbols-outlined text-white">replay</span>
+<span class="font-bold text-white">Reset</span>
+</button>
+<button class="bg-primary shadow-glow h-16 w-24 rounded-full flex items-center justify-center active:scale-95 transition-transform hover:bg-green-400 text-black">
+<span class="material-symbols-outlined text-[32px] font-variation-settings-fill">pause</span>
+</button>
+<button class="glass-panel flex-1 h-16 rounded-full flex items-center justify-center gap-2 active:scale-95 transition-transform hover:bg-white/10">
+<span class="font-bold text-white">+1 Min</span>
+</button>
+</div>
+<!-- Secondary Timers List -->
+<div class="w-full flex flex-col gap-4">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-white text-lg font-bold leading-tight">Active Timers</h3>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:text-green-400">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    New Timer
+                </button>
+</div>
+<!-- Timer Card 1 (Glassmorphic) -->
+<div class="glass-panel p-4 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white/10 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-white/5 flex items-center justify-center border border-white/5 text-white/50 group-hover:text-primary group-hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined">skillet</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-bold text-base">Boiling Pasta</span>
+<span class="text-white/50 text-xs">Target: 11 mins</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold tabular-nums text-white/70">08:30</span>
+<button class="size-10 rounded-full bg-primary/20 hover:bg-primary text-primary hover:text-black flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px] ml-0.5">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Timer Card 2 (Glassmorphic) -->
+<div class="glass-panel p-4 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white/10 transition-colors border-l-4 border-l-primary">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-bold text-base">Resting Meat</span>
+<span class="text-primary text-xs font-semibold">Complete in 5m</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold tabular-nums text-white">04:55</span>
+<button class="size-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">pause</span>
+</button>
+</div>
+</div>
+<!-- Timer Card 3 (Completed Example) -->
+<div class="glass-panel p-4 rounded-2xl flex items-center justify-between group cursor-pointer bg-red-500/10 border border-red-500/20">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-red-500/20 flex items-center justify-center text-red-500 animate-pulse">
+<span class="material-symbols-outlined">oven_gen</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-bold text-base">Pre-heat Oven</span>
+<span class="text-red-400 text-xs font-semibold">Time's Up!</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold tabular-nums text-red-400 animate-pulse">00:00</span>
+<button class="size-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">stop</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-[#121212]/90 backdrop-blur-xl border-t border-white/5 pt-2 pb-6 px-6">
+<div class="flex items-center justify-around max-w-md mx-auto">
+<button class="flex flex-col items-center gap-1 text-white/40 hover:text-white transition-colors">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-medium">Recipes</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<div class="h-0.5 w-8 bg-primary rounded-full absolute -top-[1px] shadow-[0_0_10px_#00c853]"></div>
+<span class="material-symbols-outlined filled">timer</span>
+<span class="text-[10px] font-bold">Timers</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-white/40 hover:text-white transition-colors">
+<span class="material-symbols-outlined">shopping_basket</span>
+<span class="text-[10px] font-medium">Grocery</span>
+</button>
+</div>
+</nav>
+<!-- Floating Action Button for Adding Timer (Optional visual flair) -->
+<div class="fixed bottom-24 right-6 z-40 md:hidden">
+<button class="size-14 rounded-full bg-primary text-black shadow-[0_4px_20px_rgba(0,200,83,0.4)] flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+</div>
+</body></html>

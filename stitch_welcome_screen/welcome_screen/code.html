@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChefOS - Welcome</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c753",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0f2317",
+                        "surface-dark": "#121212", 
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display antialiased overflow-hidden selection:bg-primary selection:text-white">
+<div class="fixed inset-0 z-0 w-full h-full">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+<img alt="Dark moody flatlay of fresh green herbs and cooking ingredients on a slate table" class="w-full h-full object-cover object-center opacity-90 brightness-[0.8] saturate-[1.2]" data-alt="Dark moody flatlay of fresh green herbs and cooking ingredients on a slate table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHj4glDsqk5PNiVAaZZ6q1g_pbbOXJesEPSj58TBNOAQRsz4rYVQgv84gbpOXe23E9Gft0026E5bbIwurTZ_iyFFiE8kjkM6oXswBxXSed3ERJhaLOEtExbUlmhbAb4dJdkudLhs_8o3neuT7xFBfjlUxICV2Etc2q4h3jKmyeMittaIg3ViFrr5EAVvxx-xSXm_U_Awp7RUyyr49JLGaQ3cDkNaEc4by_yOjz1dE3oSMw7DI8kfqkE4gdXRrvpCFvpkcaEqb3Vak"/>
+</div>
+<div class="relative z-20 flex flex-col h-[100dvh] w-full max-w-md mx-auto">
+<div class="flex items-center justify-center p-6 pt-12 animate-fade-in-down">
+<div class="flex items-center gap-2 drop-shadow-lg">
+<span class="material-symbols-outlined text-primary text-3xl">skillet</span>
+<h2 class="text-white text-xl font-bold leading-tight tracking-wide uppercase">ChefOS</h2>
+</div>
+</div>
+<div class="flex-1"></div>
+<div class="w-full p-4 pb-8 @container">
+<div class="glass-panel w-full rounded-3xl shadow-2xl overflow-hidden flex flex-col items-center">
+<div class="w-full flex justify-center pt-4 pb-2">
+<button class="h-1.5 w-12 rounded-full bg-white/20 hover:bg-white/40 transition-colors"></button>
+</div>
+<div class="px-6 pb-8 pt-2 flex flex-col items-center text-center w-full">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-[1.1] mb-3 drop-shadow-lg">
+                        Master Your <br/>
+<span class="text-primary">Kitchen</span>
+</h1>
+<p class="text-gray-200/90 text-base font-medium leading-relaxed mb-8 max-w-xs drop-shadow-md">
+                        Discover thousands of recipes, organize your meal plans, and cook with confidence.
+                    </p>
+<div class="w-full space-y-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg h-14 rounded-2xl flex items-center justify-center transition-all active:scale-[0.98] shadow-[0_4px_20px_rgba(0,199,83,0.25)] group">
+<span>Get Started</span>
+<span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="w-full text-white/80 hover:text-white text-sm font-semibold py-2 transition-colors flex items-center justify-center gap-1">
+                            Already have an account? <span class="text-primary underline decoration-2 underline-offset-4">Log In</span>
+</button>
+</div>
+<div class="flex gap-2.5 mt-8">
+<div class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(0,199,83,0.5)]"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

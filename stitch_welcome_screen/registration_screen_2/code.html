@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChefOS Registration</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c753",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#121212",
+                        "surface-dark": "#1E1E1E",
+                        "input-bg": "#2A2A2A",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-y-auto overflow-x-hidden text-slate-900 dark:text-white">
+<div class="fixed top-0 left-0 w-full h-[400px] bg-gradient-to-b from-[#00c753]/20 to-transparent pointer-events-none z-0 opacity-30"></div>
+<div class="relative z-10 flex items-center p-4 justify-between">
+<button class="flex size-10 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<div class="text-white/60 text-sm font-medium">Step 1 of 3</div>
+</div>
+<div class="relative z-10 flex-1 flex flex-col px-6 pb-6">
+<div class="flex flex-col items-center pt-4 pb-8">
+<div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00c753] to-[#008f3b] flex items-center justify-center mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white" style="font-size: 40px;">restaurant_menu</span>
+</div>
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight text-center">Join ChefOS</h1>
+<p class="text-gray-400 text-base font-normal leading-normal pt-2 text-center max-w-[280px]">
+                    Create an account to unlock exclusive recipes and tools.
+                </p>
+</div>
+<div class="w-full max-w-md mx-auto space-y-5">
+<div class="group">
+<label class="block text-sm font-medium text-gray-300 mb-2 pl-1">Email Address</label>
+<div class="relative flex items-center">
+<div class="absolute left-4 text-gray-400 flex items-center pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 20px;">mail</span>
+</div>
+<input class="w-full bg-surface-dark/50 dark:bg-[#1E1E1E] text-white placeholder-gray-500 border border-transparent focus:border-primary focus:ring-1 focus:ring-primary rounded-xl py-4 pl-12 pr-4 outline-none transition-all duration-200 shadow-sm" placeholder="chef@example.com" type="email"/>
+<div class="absolute right-4 text-primary opacity-0 group-focus-within:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 20px;">check_circle</span>
+</div>
+</div>
+</div>
+<div class="group">
+<label class="block text-sm font-medium text-gray-300 mb-2 pl-1">Password</label>
+<div class="relative flex items-center">
+<div class="absolute left-4 text-gray-400 flex items-center pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 20px;">lock</span>
+</div>
+<input class="w-full bg-surface-dark/50 dark:bg-[#1E1E1E] text-white placeholder-gray-500 border border-transparent focus:border-primary focus:ring-1 focus:ring-primary rounded-xl py-4 pl-12 pr-12 outline-none transition-all duration-200 shadow-sm" placeholder="Min. 8 characters" type="password"/>
+<button class="absolute right-4 text-gray-400 hover:text-white transition-colors flex items-center">
+<span class="material-symbols-outlined" style="font-size: 20px;">visibility_off</span>
+</button>
+</div>
+</div>
+<button class="w-full mt-4 bg-primary hover:bg-[#00b04a] text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/25 transition-transform active:scale-[0.98] flex items-center justify-center gap-2">
+                    Create Account
+                </button>
+<div class="relative flex py-4 items-center">
+<div class="flex-grow border-t border-white/10"></div>
+<span class="flex-shrink-0 mx-4 text-gray-500 text-sm">Or continue with</span>
+<div class="flex-grow border-t border-white/10"></div>
+</div>
+<div class="flex gap-4 justify-center">
+<button class="glass-panel h-14 flex-1 rounded-xl flex items-center justify-center transition-all hover:bg-white/5 hover:border-primary/50 group">
+<img alt="Google" class="w-6 h-6" data-alt="Google Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4cC2a0eveelxEVKq6iMpSM8ucssw-aCk18b93-s0b5v6RkE1fWlj_eUNSq0ZRow_L8SeiE_PDWSrhsOKm4kZbhjNEg1e4SRGEYtzClyY2Ar9IkCOE4YLquAUcPWzTcxRj0alI6DR2tjD5qPvJoc8o3TULmTxQN3ovAnUbm27_n3xKfGzfc1aHtoG8DLP7cx-ecBpr118qP9CW4MG6CrUYFefIlEfxE5WmcJq1Cfpvhy1PEjMAkp4lkBQQ7jR6FzHw3FiaER7jymc"/>
+</button>
+<button class="glass-panel h-14 flex-1 rounded-xl flex items-center justify-center transition-all hover:bg-white/5 hover:border-primary/50 group">
+<svg class="w-6 h-6 fill-white group-hover:fill-primary transition-colors" viewBox="0 0 24 24">
+<path d="M17.05 20.28c-.98.95-2.05.88-3.08.35-1.09-.56-2.09-.48-3.08.35-1.04.86-2.17.59-2.93-.37-1.5-1.9-2.56-4.98-1.07-7.46 1.05-1.74 2.87-1.89 3.84-.46.57.8 1.48.92 2.16.03.88-1.14 2.4-1.17 3.65-.24 1.35 1.01 1.77 2.48.88 4.79-1.93 2.5-2.82 4.48-4.04 6.72-.94 1.75-1.91 3.23-3.69 3.23-.08-.02-.15-.04-.22-.04zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"></path>
+</svg>
+</button>
+<button class="glass-panel h-14 flex-1 rounded-xl flex items-center justify-center transition-all hover:bg-white/5 hover:border-primary/50 group">
+<svg class="w-6 h-6 fill-[#1877F2] group-hover:fill-primary transition-colors" viewBox="0 0 24 24">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+</button>
+<button class="glass-panel h-14 flex-1 rounded-xl flex items-center justify-center transition-all hover:bg-white/5 hover:border-primary/50 group">
+<svg class="w-6 h-6 fill-[#2AABEE] group-hover:fill-primary transition-colors" viewBox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.38-.49 1.03-.75 4.05-1.77 6.74-2.94 8.09-3.52 3.85-1.66 4.65-1.99 5.17-2 .12 0 .38.03.55.16.14.11.18.26.2.43-.01.07-.01.14-.02.24z"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="mt-auto pt-8 pb-4 text-center">
+<p class="text-gray-400 text-sm">
+                    Already a member? 
+                    <a class="text-primary font-semibold hover:text-primary/80 transition-colors ml-1" href="#">Log in</a>
+</p>
+</div>
+</div>
+<div class="h-4 w-full"></div>
+</div>
+</body></html>

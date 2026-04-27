@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChefOS - Cooking Mode</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c753",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0f2317", // Closest theme match to #121212 with green tint
+                        "surface-dark": "#121212", // Custom surface for deep contrast
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(15, 35, 23, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .timer-pulse {
+            box-shadow: 0 0 0 0 rgba(0, 199, 83, 0.7);
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 199, 83, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 199, 83, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 199, 83, 0);
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-white overflow-hidden">
+<div class="relative flex h-screen w-full flex-col max-w-md mx-auto shadow-2xl overflow-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 pt-6 pb-2 z-10 shrink-0">
+<button class="flex items-center justify-center size-10 rounded-full bg-white/5 text-white hover:bg-white/10 transition">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<h1 class="text-base font-bold tracking-tight text-white/90 uppercase text-center flex-1 mx-4 truncate">
+                Spaghetti Carbonara
+            </h1>
+<button class="flex items-center justify-center size-10 rounded-full bg-white/5 text-white hover:bg-white/10 transition">
+<span class="material-symbols-outlined text-[24px]">more_horiz</span>
+</button>
+</header>
+<!-- Progress Bar -->
+<div class="px-6 py-3 shrink-0 flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="text-primary font-bold text-sm tracking-wider">STEP 3</span>
+<span class="text-white/40 text-xs font-medium">of 12</span>
+</div>
+<!-- Segmented Progress Bar -->
+<div class="flex gap-1 h-1.5 w-full">
+<div class="h-full flex-1 rounded-full bg-primary"></div>
+<div class="h-full flex-1 rounded-full bg-primary"></div>
+<div class="h-full flex-1 rounded-full bg-primary"></div> <!-- Current -->
+<div class="h-full flex-1 rounded-full bg-white/10"></div>
+<div class="h-full flex-1 rounded-full bg-white/10"></div>
+<div class="h-full flex-1 rounded-full bg-white/10"></div>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 relative w-full flex flex-col px-4 pb-4 min-h-0">
+<!-- Media Container -->
+<div class="relative flex-1 rounded-2xl overflow-hidden bg-surface-dark group w-full">
+<!-- Background Image/Video -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up of whisking eggs in a bowl with cheese" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8HBURXHdovLPXcqFDSHQGcZmsz6Y1OW2qgL9ZOVzK29HnIxtiEJvXDYhps121PwcDic-9Ssd5r2zwL0fIOfFVwBm-nb9s2X4yIgl6-x3KsbkdDkdJ9KYTq83FXlGPcXVyshk3r-bvRKF0aT3mKdj4I2wj4kKRJF9Tmm4O184hQo1XoU620_G6rF8mIrDkKeOhT4pxG70ynM8MMzzrIYZ2U-emyiXk5a2DTaGQUXgyMDGkroTY5Lfp1cV4nn7sq49_6bESlhcw5N4");'>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/80"></div>
+</div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="size-16 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center border border-white/20">
+<span class="material-symbols-outlined text-white text-[32px] ml-1">play_arrow</span>
+</div>
+</div>
+<!-- Instruction Card Overlay -->
+<div class="absolute bottom-0 left-0 right-0 p-4">
+<div class="glass-panel rounded-xl p-5 flex flex-col gap-4 text-left shadow-lg">
+<div class="flex justify-between items-start">
+<h2 class="text-white text-2xl font-extrabold tracking-tight leading-none">
+                                Whisk the Eggs
+                            </h2>
+<!-- Timer Button -->
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition border border-white/5 active:scale-95">
+<span class="material-symbols-outlined text-primary text-[18px]">timer</span>
+<span class="text-primary text-sm font-bold">2:00</span>
+</button>
+</div>
+<p class="text-white/90 text-lg font-medium leading-relaxed">
+                            Whisk the eggs and Pecorino Romano together in a small bowl. Season generously with black pepper.
+                        </p>
+<!-- Voice Feedback Indicator (Hidden by default or subtle) -->
+<div class="flex items-center gap-2 mt-1">
+<span class="text-white/40 text-xs font-semibold uppercase tracking-widest flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                                Listening
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Controls -->
+<footer class="px-6 pb-8 pt-2 shrink-0 flex flex-col gap-6">
+<!-- Utility Toolbar -->
+<div class="flex justify-between items-center px-4">
+<button class="flex flex-col items-center gap-1 text-white/50 hover:text-primary transition group">
+<div class="size-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/10 transition">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</div>
+<span class="text-[10px] font-medium tracking-wide">VOICE</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-white/50 hover:text-primary transition group">
+<div class="size-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/10 transition">
+<span class="material-symbols-outlined text-[20px]">list_alt</span>
+</div>
+<span class="text-[10px] font-medium tracking-wide">ITEMS</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-white/50 hover:text-primary transition group">
+<div class="size-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/10 transition">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<span class="text-[10px] font-medium tracking-wide">TIPS</span>
+</button>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex items-stretch gap-4 h-16">
+<!-- Previous Button -->
+<button class="flex items-center justify-center aspect-square h-full rounded-full bg-white/10 hover:bg-white/15 text-white transition active:scale-95">
+<span class="material-symbols-outlined text-[28px]">arrow_back</span>
+</button>
+<!-- Next Button -->
+<button class="flex-1 flex items-center justify-between px-8 h-full rounded-full bg-primary hover:bg-[#00b04a] text-surface-dark transition shadow-lg shadow-primary/20 active:scale-95 group">
+<span class="text-lg font-bold tracking-tight">Next Step</span>
+<span class="material-symbols-outlined text-[28px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</footer>
+</div>
+</body></html>

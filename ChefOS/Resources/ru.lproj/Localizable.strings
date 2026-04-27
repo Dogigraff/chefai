@@ -1,0 +1,93 @@
+"language_system" = "Системный";
+"language_english" = "Английский";
+"language_russian" = "Русский";
+"language_spanish" = "Испанский";
+"language_picker_title" = "Язык приложения";
+"tools_count" = "%d предметов техники";
+"error_title" = "Ошибка";
+"chefos_active" = "ChefOS активен";
+"scan_ai_button" = "СКАН AI";
+"analyzing_status" = "ChefOS анализирует...";
+"no_salt" = "Без соли";
+"error_profile_not_found" = "Профиль не найден";
+
+/* Medical Conditions */
+"cond_diabetes_1" = "Диабет 1 типа";
+"cond_diabetes_2" = "Диабет 2 типа";
+"cond_hypertension" = "Гипертония";
+"cond_gastritis" = "Гастрит";
+"cond_lactose" = "Непереносимость лактозы";
+"cond_gluten" = "Непереносимость глютена";
+"cond_nut_allergy" = "Аллергия на орехи";
+
+/* Religion */
+"rel_halal" = "Халяль";
+"rel_kosher" = "Кошер";
+"rel_none" = "Нет";
+
+/* Equipment */
+"eq_oven" = "Духовка";
+"eq_blender" = "Блендер";
+"eq_multicooker" = "Мультиварка";
+"eq_microwave" = "Микроволновка";
+"eq_stove" = "Плита";
+"eq_airfryer" = "Аэрогриль";
+"eq_knife" = "Шеф-нож";
+
+/* Taste */
+"taste_spicy" = "Острое";
+"taste_sweet" = "Сладкое";
+"taste_meat" = "Мясное";
+"taste_veg" = "Вегетарианское";
+"welcome_title" = "Твой AI су-шеф";
+"welcome_subtitle" = "Сфотографируй ингредиенты, получи 3 шеф-рецепта и готовь без рук.";
+"get_started" = "Начать";
+"log_in" = "Войти";
+"welcome_back" = "С возвращением, Шеф";
+"login_subtitle" = "Войди на свою цифровую кухню";
+"forgot_password" = "Забыли пароль?";
+"email_username" = "Email или логин";
+"password" = "Пароль";
+"full_name" = "Имя";
+"create_account" = "Создать аккаунт";
+"creating" = "Создаем...";
+"logging_in" = "Входим...";
+"create_your_profile" = "Создай свой ChefOS";
+"create_profile_subtitle" = "Настрой профиль для персональных рецептов.";
+"health_diet" = "Твое здоровье и диета";
+"health_diet_subtitle" = "Мы подстраиваем каждый рецепт под тебя.";
+"select_preferences" = "Выбери ограничения/предпочтения";
+"save_profile" = "Сохранить профиль";
+"hello_chef" = "Привет, Шеф";
+"what_cooking" = "Что готовим сегодня?";
+"search_recipes" = "Искать рецепты";
+"popular_recipes" = "Популярные рецепты";
+"no_recipes_yet" = "Рецептов пока нет";
+"scan_first_meal" = "Отсканируй первое блюдо, чтобы получить AI-рецепты.";
+"popular" = "Популярное";
+"new" = "Новое";
+"quick_easy" = "Быстро и просто";
+"vegan" = "Веганское";
+"low_carb" = "Малоуглеводное";
+"ingredients" = "Ингредиенты";
+"missing_items" = "Чего не хватает";
+"start_cooking" = "Начать готовку";
+"key_ingredients" = "Ключевые ингредиенты";
+"steps_title" = "Шаги";
+"step_of" = "Шаг %d из %d";
+"prev" = "Назад";
+"next" = "Далее";
+"finish" = "Готово";
+"restart_timer" = "Перезапустить таймер";
+"start_timer" = "Старт таймера (%@)";
+"timer_finished" = "Таймер завершен. Шаг готов.";
+"analyzing" = "Анализируем...";
+"taste_swipe_hint" = "Лайк/дизлайк вкусов — влияет на промпт.";
+"medical_dietary" = "Медицина и диета";
+"religion_title" = "Религия";
+"pantry_basics" = "Базовые продукты";
+"equipment_arsenal" = "Техника на кухне";
+"taste_swipe" = "Вкусы";
+"start_scan_cta" = "СКАН AI";
+"missing_profile" = "Профиль не найден";
+

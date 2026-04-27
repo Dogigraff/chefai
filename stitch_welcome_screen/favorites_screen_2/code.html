@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChefOS - Favorites</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#00c753",
+                "background-light": "#f5f8f7",
+                "background-dark": "#121212", 
+                },
+                fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md pt-4 pb-2 border-b border-white/5">
+<div class="px-4 pb-2 pt-2">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Your Cookbook</h1>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1">12 recipes saved</p>
+</div>
+<div class="px-4 py-2">
+<label class="relative flex items-center w-full">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="block w-full rounded-xl border-none bg-slate-200 dark:bg-white/10 py-3 pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-primary focus:ring-inset text-base" placeholder="Search your favorites..." type="text"/>
+</label>
+</div>
+<div class="flex items-center justify-between px-4 pb-2 pt-1">
+<div class="flex items-center gap-2">
+<span class="text-xs font-medium text-slate-500 dark:text-gray-400">Sort by</span>
+<div class="relative group">
+<select class="appearance-none bg-transparent py-1 pl-0 pr-6 text-sm font-bold text-primary focus:outline-none cursor-pointer">
+<option class="text-slate-900 bg-white">Date Added</option>
+<option class="text-slate-900 bg-white">Alphabetical</option>
+<option class="text-slate-900 bg-white">Prep Time</option>
+</select>
+<span class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 material-symbols-outlined text-[18px] text-primary transition-transform group-hover:rotate-180">expand_more</span>
+</div>
+</div>
+<button class="relative flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-white/5 px-4 py-1.5 text-xs font-semibold text-slate-700 dark:text-gray-200 backdrop-blur-md transition-all active:scale-95 hover:bg-slate-100 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Filters</span>
+<span class="absolute -right-1 -top-1 flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary"></span>
+</span>
+</button>
+</div>
+<div class="flex gap-2.5 px-4 py-2 overflow-x-auto no-scrollbar">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-4 transition-colors shadow-[0_0_10px_rgba(0,200,83,0.3)]">
+<span class="text-background-dark text-xs font-bold">All</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-white/5 border border-transparent dark:border-white/10 px-4 transition-colors hover:bg-slate-300 dark:hover:bg-white/10 backdrop-blur-sm">
+<span class="text-slate-700 dark:text-gray-300 text-xs font-medium">Vegan</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-white/5 border border-transparent dark:border-white/10 px-4 transition-colors hover:bg-slate-300 dark:hover:bg-white/10 backdrop-blur-sm">
+<span class="text-slate-700 dark:text-gray-300 text-xs font-medium">Keto</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-white/5 border border-transparent dark:border-white/10 px-4 transition-colors hover:bg-slate-300 dark:hover:bg-white/10 backdrop-blur-sm">
+<span class="text-slate-700 dark:text-gray-300 text-xs font-medium">Gluten Free</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-white/5 border border-transparent dark:border-white/10 px-4 transition-colors hover:bg-slate-300 dark:hover:bg-white/10 backdrop-blur-sm">
+<span class="text-slate-700 dark:text-gray-300 text-xs font-medium">Main Course</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-white/5 border border-transparent dark:border-white/10 px-4 transition-colors hover:bg-slate-300 dark:hover:bg-white/10 backdrop-blur-sm">
+<span class="text-slate-700 dark:text-gray-300 text-xs font-medium">Dessert</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-white/5 border border-transparent dark:border-white/10 px-4 transition-colors hover:bg-slate-300 dark:hover:bg-white/10 backdrop-blur-sm">
+<span class="text-slate-700 dark:text-gray-300 text-xs font-medium">Quick &amp; Easy</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-white/5 border border-transparent dark:border-white/10 px-4 transition-colors hover:bg-slate-300 dark:hover:bg-white/10 backdrop-blur-sm">
+<span class="text-slate-700 dark:text-gray-300 text-xs font-medium">Breakfast</span>
+</button>
+</div>
+</header>
+<main class="flex-1 p-4 pb-24">
+<div class="grid grid-cols-2 gap-4">
+<div class="group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm">
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Close up of spicy ramen bowl with egg and nori" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRKP1WndlDU2Mjy5wpWerbnP43mF4XmCvpDxo8y5O05Zgc7zxnf9GFH-8WGI4U6N0N0dus9IOi4_QP5fxxhVq64fQvGKCUjtzwmWvXuXS7-GYTmWHFJ_LiBts7Cr9jUD3y-IZkt6nfcGenqpbuMc1eMuLM8gtgm2fqvWKziXIvhptaAEUJgSDBRZs8q6rOK_pe1Wp7rrifxxS6lDkZ_-WExg7zvQKA8-S5OMJvYL0RTwv-sbj70F-7Kp6jHpPhLkLf4KO9EQ3m-oY");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-primary shadow-lg transition-transform active:scale-90">
+<span class="material-symbols-outlined fill text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-3">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-1">Spicy Miso Ramen</h3>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">45 min</span>
+</div>
+<div class="flex items-center gap-1 text-orange-400">
+<span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">Medium</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm">
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Avocado toast on sourdough bread with seeds" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArhQp3dcpH4oloUneUBa4x-L8Owwdw-qzqK_EFTBmLNtm7fsXa7ZCZTSPSIOI8LlGd6bY5xheXERdOaFEeoyIFLsOjJsI89bwjnc6U5dfMXW1xk3Ukoh4UgisZG4gTdXWQuXBzvo5aGnRRlUA94dSlIprY6NJ8yb2W6K2l2ZablgdKwb54epoKov9aNMSB-9MDQBBxqCP1FDN8cnyXWeNsYnIs7Punq9HXOxDX3D1fA2CT4HRoGzQoFfNM8eKsYbxUtFfjBaA6x38");'></div>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-primary shadow-lg transition-transform active:scale-90">
+<span class="material-symbols-outlined fill text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-3">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-1">Sourdough Avo Smash</h3>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">10 min</span>
+</div>
+<div class="flex items-center gap-1 text-green-400">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">Vegan</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm">
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Grilled salmon with lemon and herbs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzuC6-dXVS_HC3e5BSKzbpK1j9bF9Vlz6QJy7jN1itsFbjgv0_jrilTYM2mMm-TKKUBGTkeAXH_PHdjiDvAYDb4WVrvoiZmBG_eErIAg0f6PK1Xx0G-e562i_QGNShFVNpZZCnS2boYsV2a83r2VsnGVPP2aVHb9BuuROapjjep-WZEW1X0ix980an2slVX6T5ftrcLeAF2pBZQiiyJ1I3X8b1-Dobi1YP8OsNOCnm7HKjvLamZ6UeYqOP0_Mw7bVaSDuuWJgUTeU");'></div>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-primary shadow-lg transition-transform active:scale-90">
+<span class="material-symbols-outlined fill text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-3">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-1">Grilled Lemon Salmon</h3>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">25 min</span>
+</div>
+<div class="flex items-center gap-1 text-blue-400">
+<span class="material-symbols-outlined text-[16px]">health_and_safety</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">Healthy</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm">
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Bowl of berry smoothie with fruits" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmxbYWP9xBl6VE8RaP8FmIoxqyj4sLAifAwWMrCwHv3TPecpndg1CQ_cAR5mXL4Fv6w2M749Get397Hqql3GKS83UjEzie2UikC_ZvT8P-I0eJWkuZOAvlI-9WwSKc-4QYxjWVn1qt-15ed0K_if97IBcDdFJPy8Hn9gsUGa3SurBCtuDrQp0L-W-hmvzTcL1ux01zr-CVWBXhQISCof5sbOnGftaY6CK8PiEK4O4hMBIHNXazFerDW0Ek-7LJ2wbJK9NBbHxFxXo");'></div>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-primary shadow-lg transition-transform active:scale-90">
+<span class="material-symbols-outlined fill text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-3">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-1">Berry Superfood Bowl</h3>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">5 min</span>
+</div>
+<div class="flex items-center gap-1 text-pink-400">
+<span class="material-symbols-outlined text-[16px]">icecream</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">Sweet</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm">
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Fresh salad with nuts and cheese" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5quhbyUZZ5oE-1XhLojJJ-sP5C_3Hw-AKySyXUl1d4Wl6iKABjD6c2t8ls9BviJlhoMINXXFycRVjqPwh2zZUBM-0-6g1ynaUp3Q59EOzS6QHsYbXCFHNelYL-sx4ekBLviQHmkj80UUyGEMp4H1_hfBSi0sSKo9tY9MWoyD2MwclV9fTBVIhx3fmTYBm0FkEVqJWLzqbVLLXOfbHg3GdCy19pffZqkAwKEuuCRdlWaXIXpYVslOVGLnkVDfd5sMPIIkyfbQEp5k");'></div>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-primary shadow-lg transition-transform active:scale-90">
+<span class="material-symbols-outlined fill text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-3">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-1">Summer Salad</h3>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">15 min</span>
+</div>
+<div class="flex items-center gap-1 text-green-400">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">Light</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm">
+<div class="relative w-full aspect-[4/3] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Stack of pancakes with syrup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFhgwoqvFeuDbIypxl0VcWBoXFqKcweU3eaiINC2t-EJYoCh5iY_1HM_58fQgTLmu4EswAeNy5Ej8kMHdgspp3o7Cws3bPs9guwBoX-eTe-_2Fjy-sdQpcBvdq6OwCxeDZoGWwZ0g0z_zdg4tj5pA3p1OB4EHRVy1S-RgI8VEfsjpfS3LGGY9YdfknRoTmxRB-nnJhEKzLtx7uCsl29p3tsFlxt9MnHRda-GS7uTFlcg8FkT4qQzZK8LWkzZY-39FKnsq2ED5EPV8");'></div>
+<button class="absolute top-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-primary shadow-lg transition-transform active:scale-90">
+<span class="material-symbols-outlined fill text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col gap-1 p-3">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-1">Fluffy Pancakes</h3>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">20 min</span>
+</div>
+<div class="flex items-center gap-1 text-yellow-500">
+<span class="material-symbols-outlined text-[16px]">bakery_dining</span>
+<span class="text-xs font-medium text-slate-600 dark:text-gray-300">Breakfast</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 z-30 w-full border-t border-slate-200 dark:border-white/10 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl pb-6 pt-3">
+<div class="flex items-center justify-around px-2">
+<a class="group flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">home</span>
+<span class="text-[10px] font-medium tracking-wide">Home</span>
+</a>
+<a class="group flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">search</span>
+<span class="text-[10px] font-medium tracking-wide">Search</span>
+</a>
+<a class="group flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<div class="relative">
+<span class="material-symbols-outlined fill text-[26px] drop-shadow-[0_0_8px_rgba(0,199,83,0.4)]">favorite</span>
+<span class="absolute -right-1 -top-1 flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+</div>
+<span class="text-[10px] font-medium tracking-wide">Favorites</span>
+</a>
+<a class="group flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">person</span>
+<span class="text-[10px] font-medium tracking-wide">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

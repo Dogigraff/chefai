@@ -1,0 +1,47 @@
+# Xcode
+build/
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.swiftdoc
+*.swiftinfo
+
+# Swift Package Manager
+.build/
+Package.resolved
+.swiftpm/xcode
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Secrets and local config (не коммитить ключи)
+.env
+.env.*
+*.pem
+GoogleService-Info.plist
+
+# Editor (по желанию можно убрать .cursor, если нужен в репо)
+.cursor/
+
+# Logs
+*.log

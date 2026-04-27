@@ -1,0 +1,93 @@
+"language_system" = "Sistema";
+"language_english" = "Inglés";
+"language_russian" = "Ruso";
+"language_spanish" = "Español";
+"language_picker_title" = "Idioma de la app";
+"tools_count" = "%d herramientas";
+"error_title" = "Error";
+"chefos_active" = "ChefOS activo";
+"scan_ai_button" = "ESCANEAR AI";
+"analyzing_status" = "ChefOS analizando...";
+"no_salt" = "Sin sal";
+"error_profile_not_found" = "Perfil no encontrado";
+
+/* Medical Conditions */
+"cond_diabetes_1" = "Diabetes tipo 1";
+"cond_diabetes_2" = "Diabetes tipo 2";
+"cond_hypertension" = "Hipertensión";
+"cond_gastritis" = "Gastritis";
+"cond_lactose" = "Intolerancia a la lactosa";
+"cond_gluten" = "Sensibilidad al gluten";
+"cond_nut_allergy" = "Alergia a frutos secos";
+
+/* Religion */
+"rel_halal" = "Halal";
+"rel_kosher" = "Kosher";
+"rel_none" = "Ninguna";
+
+/* Equipment */
+"eq_oven" = "Horno";
+"eq_blender" = "Licuadora";
+"eq_multicooker" = "Olla multifunción";
+"eq_microwave" = "Microondas";
+"eq_stove" = "Cocina";
+"eq_airfryer" = "Freidora de aire";
+"eq_knife" = "Cuchillo de chef";
+
+/* Taste */
+"taste_spicy" = "Picante";
+"taste_sweet" = "Dulce";
+"taste_meat" = "Carne";
+"taste_veg" = "Vegetariano";
+"welcome_title" = "Tu sous-chef de IA";
+"welcome_subtitle" = "Escanea ingredientes, recibe 3 recetas de chef y cocina manos libres.";
+"get_started" = "Empezar";
+"log_in" = "Iniciar sesión";
+"welcome_back" = "Bienvenido de nuevo, Chef";
+"login_subtitle" = "Entra a tu cocina digital";
+"forgot_password" = "¿Olvidaste la contraseña?";
+"email_username" = "Email o usuario";
+"password" = "Contraseña";
+"full_name" = "Nombre completo";
+"create_account" = "Crear cuenta";
+"creating" = "Creando...";
+"logging_in" = "Iniciando...";
+"create_your_profile" = "Crea tu ChefOS";
+"create_profile_subtitle" = "Configura tu perfil para recetas personalizadas.";
+"health_diet" = "Tu salud y dieta";
+"health_diet_subtitle" = "Adaptamos cada receta a tus necesidades.";
+"select_preferences" = "Selecciona tus restricciones/preferencias";
+"save_profile" = "Guardar perfil";
+"hello_chef" = "Hola, Chef";
+"what_cooking" = "¿Qué cocinamos hoy?";
+"search_recipes" = "Buscar recetas";
+"popular_recipes" = "Recetas populares";
+"no_recipes_yet" = "Aún no hay recetas";
+"scan_first_meal" = "Escanea tu primera comida para obtener recetas de IA.";
+"popular" = "Popular";
+"new" = "Nuevo";
+"quick_easy" = "Rápido y fácil";
+"vegan" = "Vegano";
+"low_carb" = "Bajo en carbohidratos";
+"ingredients" = "Ingredientes";
+"missing_items" = "Faltantes";
+"start_cooking" = "Empezar a cocinar";
+"key_ingredients" = "Ingredientes clave";
+"steps_title" = "Pasos";
+"step_of" = "Paso %d de %d";
+"prev" = "Anterior";
+"next" = "Siguiente";
+"finish" = "Finalizar";
+"restart_timer" = "Reiniciar temporizador";
+"start_timer" = "Iniciar temporizador (%@)";
+"timer_finished" = "Temporizador finalizado. Paso completo.";
+"analyzing" = "Analizando...";
+"taste_swipe_hint" = "Like/dislike de sabores — afecta el prompt.";
+"medical_dietary" = "Médico y dieta";
+"religion_title" = "Religión";
+"pantry_basics" = "Básicos de despensa";
+"equipment_arsenal" = "Equipo de cocina";
+"taste_swipe" = "Sabores";
+"start_scan_cta" = "ESCANEAR AI";
+"missing_profile" = "Perfil no encontrado";
+
