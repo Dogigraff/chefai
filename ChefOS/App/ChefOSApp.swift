@@ -20,10 +20,10 @@ struct ChefOSApp: App {
             return InMemoryStorageService()
         }
 
-        configureFirebaseIfAvailable()
-        NotificationManager.shared.requestAuthorization()
         self.container = AppContainer.makeDefault(storageService: storageService)
         self._hasProfile = State(initialValue: storageService.loadUserProfile() != nil)
+        configureFirebaseIfAvailable()
+        NotificationManager.shared.requestAuthorization()
     }
 
     var body: some Scene {
