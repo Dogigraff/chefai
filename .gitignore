@@ -19,6 +19,11 @@ xcuserdata/
 *.swiftdoc
 *.swiftinfo
 
+# XcodeGen output (regenerate via: xcodegen generate)
+# ChefOS.xcodeproj/ is committed after first successful CI run optional; keep generated locally:
+ChefOS.xcodeproj/
+ChefOS.xcworkspace/
+
 # Swift Package Manager
 .build/
 Package.resolved
@@ -40,7 +45,7 @@ Desktop.ini
 *.pem
 GoogleService-Info.plist
 
-# Editor (по желанию можно убрать .cursor, если нужен в репо)
+# Editor
 .cursor/
 
 # Logs

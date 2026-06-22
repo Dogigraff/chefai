@@ -311,6 +311,7 @@ extension OpenAIService {
                 steps: [step],
                 nutrition: nutrition,
                 smartSubstitutions: ["Butter": "Olive oil"],
+                substitutionReasons: ["Butter": "Lower saturated fat"],
                 chefTips: "Toast bread directly in the pan for crunch."
             ),
             Recipe(
@@ -324,6 +325,7 @@ extension OpenAIService {
                 steps: [step],
                 nutrition: nutrition,
                 smartSubstitutions: ["Quinoa": "Buckwheat"],
+                substitutionReasons: ["Quinoa": "Lower glycemic index"],
                 chefTips: "Rinse quinoa to remove bitterness."
             ),
             Recipe(
@@ -337,12 +339,13 @@ extension OpenAIService {
                 steps: [step],
                 nutrition: nutrition,
                 smartSubstitutions: ["Balsamic pearls": "Balsamic reduction"],
+                substitutionReasons: ["Balsamic pearls": "Same flavor profile, easier prep"],
                 chefTips: "Shock confit tomatoes in ice bath for clean peel."
             )
         ]
     }
 
-    private func cleanJSONResponse(_ text: String) throws -> String {
+    func cleanJSONResponse(_ text: String) throws -> String {
         // 1. Log the raw text for debugging (internal only)
         print("DEBUG: OpenAI Raw Response Length: \(text.count)")
 

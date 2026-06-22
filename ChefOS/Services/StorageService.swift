@@ -42,7 +42,6 @@ final class InMemoryStorageService: StorageService {
 
 // MARK: - SwiftData-backed Storage
 
-@MainActor
 final class SwiftDataStorageService: StorageService {
     let modelContainer: ModelContainer
 

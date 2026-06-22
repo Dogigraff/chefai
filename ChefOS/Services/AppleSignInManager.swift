@@ -1,5 +1,6 @@
 import AuthenticationServices
 import Foundation
+import UIKit
 
 final class AppleSignInManager: NSObject {
     private var continuation: CheckedContinuation<ASAuthorizationAppleIDCredential, Error>?
@@ -33,7 +34,14 @@ extension AppleSignInManager: ASAuthorizationControllerDelegate, ASAuthorization
     }
 
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        ASPresentationAnchor()
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        if let window = scenes.flatMap(\.windows).first(where: { $0.isKeyWindow }) {
+            return window
+        }
+        if let window = scenes.flatMap(\.windows).first {
+            return window
+        }
+        return ASPresentationAnchor()
     }
 }
 

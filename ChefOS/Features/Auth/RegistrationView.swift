@@ -1,4 +1,5 @@
 import SwiftUI
+import AuthenticationServices
 
 struct RegistrationView: View {
     @StateObject private var viewModel = AuthViewModel()
