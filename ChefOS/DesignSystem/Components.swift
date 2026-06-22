@@ -148,6 +148,8 @@ struct TagView: View {
     }
 }
 
+typealias NeoTag = TagView
+
 // Adaptive wrap layout for tags/chips
 public struct Wrap<Content: View>: View {
     let alignment: HorizontalAlignment
