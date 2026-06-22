@@ -1,5 +1,6 @@
 import SwiftUI
 import AVFoundation
+import UIKit
 
 final class CameraController: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate, AVCaptureMetadataOutputObjectsDelegate {
     @Published var isAuthorized: Bool = false
@@ -76,7 +77,7 @@ final class CameraController: NSObject, ObservableObject, AVCapturePhotoCaptureD
         output.capturePhoto(with: settings, delegate: self)
     }
 
-    func captureOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let error { print("Capture error: \(error.localizedDescription)") }
         guard let data = photo.fileDataRepresentation(), let image = UIImage(data: data) else {
             captureCompletion?(nil); captureCompletion = nil; return
