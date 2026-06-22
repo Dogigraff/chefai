@@ -72,28 +72,6 @@ struct DashboardView: View {
 
 // MARK: - Layers
 private extension DashboardView {
-    var backgroundLayer: some View {
-        ZStack {
-            LinearGradient(
-                colors: [
-                    Color.black,
-                    Color.neoBackground.opacity(0.9)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            if let previewImage {
-                previewImage
-                    .resizable()
-                    .scaledToFill()
-                    .opacity(0.35)
-                    .ignoresSafeArea()
-            } else {
-                Color.black.opacity(0.4).ignoresSafeArea()
-            }
-        }
-    }
-
     var topBar: some View {
         GlassCard {
             VStack(alignment: .leading, spacing: 8) {
@@ -129,7 +107,7 @@ private extension DashboardView {
                 StatusChip(icon: "fork.knife", text: String(format: String(localized: "tools_count"), profile.equipment.count))
             }
             if profile.pantryBasics.salt == false {
-                StatusChip(icon: "exclamationmark.triangle", text: L("no_salt"))
+                StatusChip(icon: "exclamationmark.triangle", text: String(localized: "no_salt"))
             }
         }
     }
@@ -206,7 +184,6 @@ private extension DashboardView {
                         guard let image else { return }
                         DispatchQueue.main.async {
                             let barcodes = Array(camera.scannedBarcodes)
-                            viewModel.state = .analyzing
                             viewModel.analyze(image: image, barcodes: barcodes)
                             camera.scannedBarcodes.removeAll()
                         }

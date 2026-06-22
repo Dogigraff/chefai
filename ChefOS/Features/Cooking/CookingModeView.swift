@@ -166,7 +166,7 @@ private extension CookingModeView {
                 timerActive = false
                 HapticManager.shared.notify(.warning)
                 NotificationManager.shared.scheduleStepComplete()
-                speak(String(localized: "timer_finished"))
+                voiceManager.speak(String(localized: "timer_finished"))
             }
         }
     }
