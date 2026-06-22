@@ -13,11 +13,11 @@ struct ChefOSApp: App {
     @StateObject private var languageManager = LanguageManager()
 
     init() {
-        let storageService: StorageService
-        if let modelContainer = try? ModelContainer(for: StoredUserProfile.self, StoredCache.self) {
-            storageService = SwiftDataStorageService(container: modelContainer)
-        } else {
-            storageService = InMemoryStorageService()
+        let storageService: StorageService = MainActor.assumeIsolated {
+            if let modelContainer = try? ModelContainer(for: StoredUserProfile.self, StoredCache.self) {
+                return SwiftDataStorageService(container: modelContainer)
+            }
+            return InMemoryStorageService()
         }
 
         configureFirebaseIfAvailable()

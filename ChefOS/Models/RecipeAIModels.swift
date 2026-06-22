@@ -111,7 +111,7 @@ enum RecipeStyle: String, Codable, Identifiable {
     var id: String { rawValue }
 }
 
-struct Ingredient: Codable, Identifiable, Equatable {
+struct Ingredient: Codable, Identifiable, Equatable, Hashable {
     let id: UUID
     let name: String
     let quantity: String
@@ -123,7 +123,7 @@ struct Ingredient: Codable, Identifiable, Equatable {
     }
 }
 
-struct Step: Codable, Identifiable, Equatable {
+struct Step: Codable, Identifiable, Equatable, Hashable {
     let id: UUID
     let text: String
     let timerSeconds: Int?
@@ -137,13 +137,13 @@ struct Step: Codable, Identifiable, Equatable {
     }
 }
 
-struct Nutrition: Codable, Equatable {
+struct Nutrition: Codable, Equatable, Hashable {
     let calories: Int
     let glycemicIndex: Int?
     let sugarGrams: Double?
 }
 
-struct Recipe: Identifiable, Codable, Equatable {
+struct Recipe: Identifiable, Codable, Equatable, Hashable {
     let id: UUID
     let title: String
     let description: String

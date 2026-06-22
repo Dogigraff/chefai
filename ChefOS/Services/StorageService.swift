@@ -42,6 +42,7 @@ final class InMemoryStorageService: StorageService {
 
 // MARK: - SwiftData-backed Storage
 
+@MainActor
 final class SwiftDataStorageService: StorageService {
     let modelContainer: ModelContainer
 
@@ -86,7 +87,8 @@ final class SwiftDataStorageService: StorageService {
     // MARK: - Cache Helpers
 
     private func saveCache<T: Codable>(type: StoredCache.CacheType, payload: T) {
-        if let existing = try? context.fetch(FetchDescriptor<StoredCache>(predicate: #Predicate { $0.type == type.rawValue })).first {
+        let typeRaw = type.rawValue
+        if let existing = try? context.fetch(FetchDescriptor<StoredCache>(predicate: #Predicate { $0.type == typeRaw })).first {
             context.delete(existing)
         }
         guard let data = try? JSONEncoder().encode(payload) else { return }
@@ -95,8 +97,9 @@ final class SwiftDataStorageService: StorageService {
     }
 
     private func loadCache<T: Codable>(type: StoredCache.CacheType, as _: T.Type) -> T? {
+        let typeRaw = type.rawValue
         guard
-            let cache = try? context.fetch(FetchDescriptor<StoredCache>(predicate: #Predicate { $0.type == type.rawValue })).first,
+            let cache = try? context.fetch(FetchDescriptor<StoredCache>(predicate: #Predicate { $0.type == typeRaw })).first,
             let decoded = try? JSONDecoder().decode(T.self, from: cache.payload)
         else {
             return nil

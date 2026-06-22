@@ -41,7 +41,11 @@ final class VoiceManager: NSObject, ObservableObject {
     }
 
     func requestAuthorization() async {
-        let status = await SFSpeechRecognizer.requestAuthorization()
+        let status = await withCheckedContinuation { continuation in
+            SFSpeechRecognizer.requestAuthorization { authStatus in
+                continuation.resume(returning: authStatus)
+            }
+        }
         isAuthorized = status == .authorized
         switch AVAudioSession.sharedInstance().recordPermission {
         case .granted:
@@ -49,9 +53,12 @@ final class VoiceManager: NSObject, ObservableObject {
         case .denied:
             isAuthorized = false
         case .undetermined:
-            do {
-                try await AVAudioSession.sharedInstance().requestRecordPermission()
-            } catch {
+            let granted = await withCheckedContinuation { continuation in
+                AVAudioSession.sharedInstance().requestRecordPermission { allowed in
+                    continuation.resume(returning: allowed)
+                }
+            }
+            if !granted {
                 isAuthorized = false
             }
         @unknown default:
@@ -97,7 +104,7 @@ final class VoiceManager: NSObject, ObservableObject {
             return
         }
 
-        recognitionTask = speechRecognizer?.recognitionTask(with: request) { [weak self] result, error in
+        recognitionTask = speechRecognizer.recognitionTask(with: request) { [weak self] result, error in
             guard let self else { return }
             if let result = result {
                 let text = result.bestTranscription.formattedString.lowercased()
